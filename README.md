@@ -3,7 +3,7 @@ Load Balancer Simulation — JSQ, JBT, POD Policies
 This repository implements and compares different load-balancing policies using a large-scale discrete-event simulation.
 The simulator models tasks arriving over time, servers processing queues, and several scheduling strategies commonly used in distributed systems.
 
-📌 Overview
+Overview
 
 The project simulates the following:
 
@@ -31,7 +31,7 @@ Queue lengths & threshold updates
 
 Server selection decisions
 
-🧠 Load Balancing Policies
+Load Balancing Policies
 1. JSQ — Join-the-Shortest-Queue
 
 Each incoming task is routed to the server with:
@@ -78,7 +78,7 @@ server = argmin { queue_length(s) | s ∈ sample(d) }
 
 This approximates JSQ while requiring very limited information.
 
-⚙️ Model Components
+Model Components
 Inter-arrival times
 
 Hybrid distribution:
@@ -100,7 +100,7 @@ service_time = max(1, min(X, 100 * 2*beta ))
 
 High variance ensures load-balancing behavior is visible under heavy load.
 
-📊 Simulation Output
+Simulation Output
 
 For each simulation batch:
 
@@ -126,7 +126,7 @@ Plots illustrate response time vs. system load:
 rho = lambda / mu
 rho = [40,…,49.5] / 50
 
-📈 Example Plot (from final code section)
+Example Plot (from final code section)
 
 The repository generates a figure:
 
@@ -136,7 +136,7 @@ plt.scatter(rho, temp1.mean())
 
 This shows how response time grows as utilization approaches 1 (heavy traffic).
 
-🚀 Running the Simulation
+Running the Simulation
 
 Install dependencies:
 
